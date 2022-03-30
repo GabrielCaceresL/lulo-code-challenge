@@ -219,7 +219,7 @@ public class RunClass {
      */
     public double diffMinTime(Date date1, Date date2) {
         // calculate the time difference
-        long diff = date1.getTime() - date2.getTime();
+        long diff = Math.abs(date1.getTime() - date2.getTime());
         // convert the time difference in minutes
         double mins = ((double) diff / (1000 * 60));
         return mins;

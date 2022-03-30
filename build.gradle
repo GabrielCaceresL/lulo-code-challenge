@@ -10,14 +10,12 @@ repositories {
 }
 
 task fatJar(type: Jar) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     manifest {
         attributes 'Main-Class': 'RunClass'
     }
-    archiveClassifier = ""
-    from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
+    from { configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+
     with jar
 }
 

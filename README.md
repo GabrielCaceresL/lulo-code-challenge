@@ -21,13 +21,13 @@ is an open-source build automation tool that is designed to be flexible enough t
 
 ## For Run api use
 ```bash
-gradle clean build
+gradle clean fatJar
 java -jar build/libs/lulo-code-challenge-1.0.jar
 ```
 
 ## For Run api with docker use
 ```bash
-gradle clean build
+gradle clean fatJar
 docker build -t lulo-code .
 docker run --name "lulo-code-challenge" -it lulo-code
 ```
